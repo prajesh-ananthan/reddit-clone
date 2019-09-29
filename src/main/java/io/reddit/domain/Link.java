@@ -1,6 +1,7 @@
 package io.reddit.domain;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
@@ -13,17 +14,18 @@ import java.util.List;
  * Created by Prajesh on 21/1/2019.
  */
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @Entity
 @Table(name = "link")
 public class Link extends BaseDomain {
 
-    private Long id;
-    private String title;
-    private String url;
+  private Long id;
+  private String title;
+  private String url;
 
-    @OneToMany(mappedBy = "link")
-    private List<Comment> comments = new ArrayList<>();
+  @OneToMany(mappedBy = "link")
+  private List<Comment> comments = new ArrayList<>();
 
 }

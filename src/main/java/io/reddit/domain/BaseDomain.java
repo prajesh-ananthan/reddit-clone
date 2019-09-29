@@ -9,7 +9,7 @@ import java.util.Objects;
  */
 
 @MappedSuperclass
-public class BaseDomain {
+public class BaseDomain extends Auditable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
